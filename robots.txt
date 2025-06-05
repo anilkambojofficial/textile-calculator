@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://textilecalculation.com/sitemap.xml

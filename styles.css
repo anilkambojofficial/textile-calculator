@@ -1,0 +1,157 @@
+/* Custom styles for Textile Calculation */
+
+/* Font family */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom colors */
+:root {
+  --primary-color: #2563eb; /* Blue 600 */
+  --primary-dark: #1d4ed8; /* Blue 700 */
+  --primary-light: #dbeafe; /* Blue 100 */
+  --accent-color: #5b21b6; /* Purple 700 */
+  --background-color: #f9fafb; /* Gray 50 */
+  --background-dark: #1f2937; /* Gray 800 */
+  --text-color: #111827; /* Gray 900 */
+  --text-muted: #6b7280; /* Gray 500 */
+  --text-light: #e5e7eb; /* Gray 200 */
+  --border-color: #e5e7eb; /* Gray 200 */
+}
+
+/* Links */
+a {
+  transition: color 0.2s;
+}
+
+/* Custom button styles */
+button {
+  transition: all 0.2s;
+}
+
+/* Input focus styles */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  border-color: var(--primary-color);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Card hover effects */
+.card-hover-effect {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Section spacing */
+.section-spacing {
+  margin-bottom: 3rem;
+}
+
+/* Additional spacing classes */
+.mb-30 {
+  margin-bottom: 7.5rem;
+}
+
+.mt-30 {
+  margin-top: 7.5rem;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Make calculator buttons full width on mobile */
+  button {
+    width: 100% !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  /* Adjust grid layout for calculator forms */
+  .grid-cols-1, .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Improve input spacing */
+  input, select {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Make calculator sections more compact */
+  .calculator-section {
+    padding: 1rem !important;
+  }
+  
+  /* Adjust navigation tabs */
+  .calculator-tab {
+    padding: 0.5rem !important;
+    font-size: 0.875rem !important;
+    white-space: nowrap;
+  }
+  
+  /* Make tab container scrollable */
+  .flex.flex-wrap.gap-2 {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve touch targets */
+@media (max-width: 640px) {
+  button, 
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+  }
+  
+  input, 
+  select {
+    min-height: 40px;
+  }
+}
+
+/* Print styles */
+@media print {
+  header, footer, .no-print {
+    display: none;
+  }
+  
+  body {
+    background: white;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculators - Textile Calculation</title>
+  <meta name="description" content="Professional textile calculators for GSM, yarn count conversion, cover factor, and more. Designed for textile industry professionals and students.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Textile Calculation</a>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+          <li><a href="calculator.html" class="text-blue-600 font-medium">Calculators</a></li>
+          <li><a href="blog.html" class="hover:text-blue-600">Blog</a></li>
+          <li><a href="about.html" class="hover:text-blue-600">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-3xl font-bold mb-8 text-center">Textile Calculators</h1>
+      
+      <!-- Calculator Navigation Tabs -->
+      <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+        <div class="flex flex-wrap gap-2">
+          <a href="#gsm" onclick="showCalculator('gsm')" class="calculator-tab px-4 py-2 bg-blue-600 text-white rounded-md">GSM Calculator</a>
+          <a href="#countconverter" onclick="showCalculator('countconverter')" class="calculator-tab px-4 py-2 bg-gray-200 hover:bg-blue-100 rounded-md">Count Converter</a>
+          <a href="#coverfactor" onclick="showCalculator('coverfactor')" class="calculator-tab px-4 py-2 bg-gray-200 hover:bg-blue-100 rounded-md">Cover Factor Calculator</a>
+          <a href="#yarnfinder" onclick="showCalculator('yarnfinder')" class="calculator-tab px-4 py-2 bg-gray-200 hover:bg-blue-100 rounded-md">Yarn Count Finder</a>
+          <a href="#yarnweight" onclick="showCalculator('yarnweight')" class="calculator-tab px-4 py-2 bg-gray-200 hover:bg-blue-100 rounded-md">Yarn Weight Calculator</a>
+          <a href="#basic" onclick="showCalculator('basic')" class="calculator-tab px-4 py-2 bg-gray-200 hover:bg-blue-100 rounded-md">Basic Converters</a>
+        </div>
+      </div>
+      
+      <!-- GSM Calculator Section -->
+      <div id="gsm" class="calculator-section mb-16">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">GSM Calculator</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">EPI (Ends Per Inch)</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="60">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">PPI (Picks Per Inch)</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="55">
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Warp Count</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="30">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Warp Count System</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option>Ne</option>
+                      <option>Nm</option>
+                      <option>Tex</option>
+                      <option>Denier</option>
+                      <option>Linen</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Weft Count</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="30">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Weft Count System</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option>Ne</option>
+                      <option>Nm</option>
+                      <option>Tex</option>
+                      <option>Denier</option>
+                      <option>Linen</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Warp Shrinkage (%)</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="2">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Weft Shrinkage (%)</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="1">
+                  </div>
+                </div>
+                
+                <div>
+                  <button type="button" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                    Calculate GSM
+                  </button>
+                  <button type="button" class="px-4 py-2 ml-2 bg-gray-200 hover:bg-gray-300 rounded-md">
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+            
+            <div>
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-4">Result</h3>
+                <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium">GSM Value:</span>
+                    <span class="font-bold text-blue-600">-- g/m²</span>
+                  </div>
+                </div>
+                
+
+              </div>
+              
+              <div class="mt-4">
+                <button type="button" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm">
+                  Save Calculation
+                </button>
+              </div>
+              
+              <div class="mt-6">
+                <h4 class="font-medium mb-2">Recent Calculations</h4>
+                <div class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                  <p class="text-center text-gray-500">No saved calculations yet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Count Converter -->
+      <div id="countconverter" class="calculator-section mb-16 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">Count Converter</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Count Value</label>
+                    <input type="number" id="count-value" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Enter count value">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Count System</label>
+                    <select id="count-system" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="Ne">Ne (English Cotton)</option>
+                      <option value="Nm">Nm (Metric)</option>
+                      <option value="Tex">Tex</option>
+                      <option value="Denier">Denier</option>
+                      <option value="Linen">Linen (Lea)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div>
+                  <button type="button" id="convert-count-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                    Convert
+                  </button>
+                  <button type="button" id="reset-count-btn" class="px-4 py-2 ml-2 bg-gray-200 hover:bg-gray-300 rounded-md">
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+            
+            <div>
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-4">Conversion Results</h3>
+                <div class="space-y-3">
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Ne (English Cotton):</span>
+                      <span id="result-ne" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Nm (Metric):</span>
+                      <span id="result-nm" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Tex:</span>
+                      <span id="result-tex" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Denier:</span>
+                      <span id="result-denier" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Linen (Lea):</span>
+                      <span id="result-linen" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <button type="button" id="save-count-btn" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm">
+                  Save Conversion
+                </button>
+              </div>
+              
+              <div class="mt-6" id="recent-conversions">
+                <h4 class="font-medium mb-2">Recent Conversions</h4>
+                <div id="recent-conversions-list">
+                  <!-- Recent conversions will be displayed here -->
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                    <p class="text-center text-gray-500">No saved conversions yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cover Factor Calculator -->
+      <div id="coverfactor" class="calculator-section mb-16 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">Cover Factor Calculator</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">EPI (Ends Per Inch)</label>
+                    <input type="number" id="cf-epi" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="60">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">PPI (Picks Per Inch)</label>
+                    <input type="number" id="cf-ppi" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="55">
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Warp Count</label>
+                    <input type="number" id="cf-warp-count" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="30">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Warp Count System</label>
+                    <select id="cf-warp-system" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="Ne">Ne</option>
+                      <option value="Nm">Nm</option>
+                      <option value="Tex">Tex</option>
+                      <option value="Denier">Denier</option>
+                      <option value="Linen">Linen</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Weft Count</label>
+                    <input type="number" id="cf-weft-count" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="30">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Weft Count System</label>
+                    <select id="cf-weft-system" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="Ne">Ne</option>
+                      <option value="Nm">Nm</option>
+                      <option value="Tex">Tex</option>
+                      <option value="Denier">Denier</option>
+                      <option value="Linen">Linen</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Weave Type</label>
+                  <select id="cf-weave-type" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                    <option value="Plain">Plain Weave</option>
+                    <option value="Twill">Twill Weave</option>
+                    <option value="Satin">Satin Weave</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <button type="button" id="calculate-cf-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                    Calculate Cover Factor
+                  </button>
+                  <button type="button" id="reset-cf-btn" class="px-4 py-2 ml-2 bg-gray-200 hover:bg-gray-300 rounded-md">
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+            
+            <div>
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-4">Results</h3>
+                <div class="space-y-3">
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Warp Cover Factor:</span>
+                      <span id="warp-cf-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Weft Cover Factor:</span>
+                      <span id="weft-cf-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Total Cover Factor:</span>
+                      <span id="total-cf-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mt-4 text-sm text-gray-600">
+                  <p class="font-semibold mb-1">Cover Factor Guide:</p>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>&lt; 15: Very open fabric structure</li>
+                    <li>15-20: Open fabric structure</li>
+                    <li>21-25: Medium fabric structure</li>
+                    <li>26-28: Tightly woven fabric</li>
+                    <li>&gt; 28: Very tight fabric, may be difficult to weave</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <button type="button" id="save-cf-btn" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm">
+                  Save Calculation
+                </button>
+              </div>
+              
+              <div class="mt-6" id="recent-cf-calcs">
+                <h4 class="font-medium mb-2">Recent Calculations</h4>
+                <div id="recent-cf-list">
+                  <!-- Recent calculations will be displayed here -->
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                    <p class="text-center text-gray-500">No saved calculations yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Yarn Count Finder -->
+      <div id="yarnfinder" class="calculator-section mb-16 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">Yarn Count Finder</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Yarn Length (meters)</label>
+                    <input type="number" id="yarn-length" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="1000">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Yarn Weight</label>
+                    <input type="number" id="yarn-weight" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="10">
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Weight Unit</label>
+                  <select id="weight-unit" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                    <option value="gram">Grams</option>
+                    <option value="kg">Kilograms</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <button type="button" id="find-count-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                    Find Yarn Count
+                  </button>
+                  <button type="button" id="reset-finder-btn" class="px-4 py-2 ml-2 bg-gray-200 hover:bg-gray-300 rounded-md">
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+            
+            <div>
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-4">Results</h3>
+                <div class="space-y-3">
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Ne (English Cotton):</span>
+                      <span id="finder-ne-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Nm (Metric):</span>
+                      <span id="finder-nm-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Tex:</span>
+                      <span id="finder-tex-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Denier:</span>
+                      <span id="finder-denier-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Linen (Lea):</span>
+                      <span id="finder-linen-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <button type="button" id="save-finder-btn" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm">
+                  Save Calculation
+                </button>
+              </div>
+              
+              <div class="mt-6" id="recent-finder-calcs">
+                <h4 class="font-medium mb-2">Recent Calculations</h4>
+                <div id="recent-finder-list">
+                  <!-- Recent calculations will be displayed here -->
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                    <p class="text-center text-gray-500">No saved calculations yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Yarn Weight Calculator -->
+      <div id="yarnweight" class="calculator-section mb-16 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">Yarn Weight Calculator</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Yarn Count</label>
+                    <input type="number" id="yarn-count" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="30">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Count System</label>
+                    <select id="yarn-count-system" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="Ne">Ne (English Cotton)</option>
+                      <option value="Nm">Nm (Metric)</option>
+                      <option value="Tex">Tex</option>
+                      <option value="Denier">Denier</option>
+                      <option value="Linen">Linen (Lea)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Yarn Length (meters)</label>
+                  <input type="number" id="weight-calc-length" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="1000">
+                </div>
+                
+                <div>
+                  <button type="button" id="calculate-weight-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                    Calculate Weight
+                  </button>
+                  <button type="button" id="reset-weight-btn" class="px-4 py-2 ml-2 bg-gray-200 hover:bg-gray-300 rounded-md">
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+            
+            <div>
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-4">Results</h3>
+                <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Yarn Weight:</span>
+                    <span id="yarn-weight-result" class="font-bold text-blue-600">-- grams</span>
+                  </div>
+                </div>
+                
+
+              </div>
+              
+              <div class="mt-4">
+                <button type="button" id="save-weight-btn" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm">
+                  Save Calculation
+                </button>
+              </div>
+              
+              <div class="mt-6" id="recent-weight-calcs">
+                <h4 class="font-medium mb-2">Recent Calculations</h4>
+                <div id="recent-weight-list">
+                  <!-- Recent calculations will be displayed here -->
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                    <p class="text-center text-gray-500">No saved calculations yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Basic Converters -->
+      <div id="basic" class="calculator-section mb-16 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6">Basic Converters</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Length Converter</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Value</label>
+                    <input type="number" id="length-value" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Enter length value">
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">From</label>
+                      <select id="length-from" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="mm">Millimeters (mm)</option>
+                        <option value="cm">Centimeters (cm)</option>
+                        <option value="m">Meters (m)</option>
+                        <option value="km">Kilometers (km)</option>
+                        <option value="in">Inches (in)</option>
+                        <option value="ft">Feet (ft)</option>
+                        <option value="yd">Yards (yd)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">To</label>
+                      <select id="length-to" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="mm">Millimeters (mm)</option>
+                        <option value="cm">Centimeters (cm)</option>
+                        <option value="m" selected>Meters (m)</option>
+                        <option value="km">Kilometers (km)</option>
+                        <option value="in">Inches (in)</option>
+                        <option value="ft">Feet (ft)</option>
+                        <option value="yd">Yards (yd)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" id="convert-length-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                      Convert
+                    </button>
+                  </div>
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Result:</span>
+                      <span id="length-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Scientific Calculator</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <input type="text" id="scientific-display" class="w-full px-3 py-2 border border-gray-300 rounded-md text-right" readonly>
+                  </div>
+                  <div class="grid grid-cols-4 gap-2">
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="7">7</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="8">8</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="9">9</button>
+                    <button type="button" class="scientific-btn bg-blue-600 text-white p-2 rounded-md" data-value="/">/</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="4">4</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="5">5</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="6">6</button>
+                    <button type="button" class="scientific-btn bg-blue-600 text-white p-2 rounded-md" data-value="*">×</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="1">1</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="2">2</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="3">3</button>
+                    <button type="button" class="scientific-btn bg-blue-600 text-white p-2 rounded-md" data-value="-">-</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value="0">0</button>
+                    <button type="button" class="scientific-btn bg-gray-200 p-2 rounded-md" data-value=".">.</button>
+                    <button type="button" id="scientific-equals" class="bg-green-600 text-white p-2 rounded-md">=</button>
+                    <button type="button" class="scientific-btn bg-blue-600 text-white p-2 rounded-md" data-value="+">+</button>
+                  </div>
+                  <div class="grid grid-cols-4 gap-2">
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="sin">sin</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="cos">cos</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="tan">tan</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="log">log</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="sqrt">√</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="(">(</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value=")">)</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="π">π</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="e">e</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="^">^</button>
+                    <button type="button" class="scientific-btn bg-gray-300 p-2 rounded-md" data-value="%">%</button>
+                    <button type="button" id="scientific-clear" class="bg-red-500 text-white p-2 rounded-md">C</button>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-lg font-semibold mb-3">RGB/CMYK Color Mixer</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div class="flex items-center justify-center mb-2">
+                    <div id="color-preview" class="w-full h-20 border border-gray-300 rounded-md"></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 class="font-medium mb-2">RGB</h4>
+                      <div class="space-y-2">
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Red (0-255)</label>
+                          <input type="number" id="rgb-red" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="255" value="0">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Green (0-255)</label>
+                          <input type="number" id="rgb-green" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="255" value="0">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Blue (0-255)</label>
+                          <input type="number" id="rgb-blue" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="255" value="0">
+                        </div>
+                        <div>
+                          <button type="button" id="rgb-to-cmyk-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                            Convert to CMYK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="font-medium mb-2">CMYK</h4>
+                      <div class="space-y-2">
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Cyan (0-100%)</label>
+                          <input type="number" id="cmyk-cyan" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="100" value="0">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Magenta (0-100%)</label>
+                          <input type="number" id="cmyk-magenta" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="100" value="0">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Yellow (0-100%)</label>
+                          <input type="number" id="cmyk-yellow" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="100" value="0">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-gray-700 mb-1">Key/Black (0-100%)</label>
+                          <input type="number" id="cmyk-key" class="w-full px-3 py-2 border border-gray-300 rounded-md" min="0" max="100" value="0">
+                        </div>
+                        <div>
+                          <button type="button" id="cmyk-to-rgb-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                            Convert to RGB
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-lg font-semibold mb-3">Percentage Calculator</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <h4 class="font-medium mb-2">What percentage is A of B?</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Value (A)</label>
+                        <input type="number" id="percent-value" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="25">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Base (B)</label>
+                        <input type="number" id="percent-base" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="100">
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <button type="button" id="calculate-percent-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                        Calculate
+                      </button>
+                    </div>
+                    <div class="mt-2 bg-gray-50 p-3 rounded border border-gray-200">
+                      <div class="flex justify-between">
+                        <span class="font-medium">Result:</span>
+                        <span id="percent-result" class="font-bold text-blue-600">--</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mt-2">
+                    <h4 class="font-medium mb-2">What is A% of B?</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Percentage (A)</label>
+                        <input type="number" id="percent-of-percent" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="25">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Base (B)</label>
+                        <input type="number" id="percent-of-base" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="100">
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <button type="button" id="calculate-percent-of-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                        Calculate
+                      </button>
+                    </div>
+                    <div class="mt-2 bg-gray-50 p-3 rounded border border-gray-200">
+                      <div class="flex justify-between">
+                        <span class="font-medium">Result:</span>
+                        <span id="percent-of-result" class="font-bold text-blue-600">--</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-lg font-semibold mb-3">Triangle Calculator</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div class="grid grid-cols-3 gap-4">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">Side a</label>
+                      <input type="number" id="triangle-side-a" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="3">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">Side b</label>
+                      <input type="number" id="triangle-side-b" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="4">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">Side c</label>
+                      <input type="number" id="triangle-side-c" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="5">
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" id="calculate-triangle-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                      Calculate
+                    </button>
+                  </div>
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex justify-between">
+                        <span class="font-medium">Area:</span>
+                        <span id="triangle-area" class="font-bold text-blue-600">--</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="font-medium">Perimeter:</span>
+                        <span id="triangle-perimeter" class="font-bold text-blue-600">--</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="font-medium">Angle A:</span>
+                        <span id="triangle-angle-a" class="font-bold text-blue-600">--</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="font-medium">Angle B:</span>
+                        <span id="triangle-angle-b" class="font-bold text-blue-600">--</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="font-medium">Angle C:</span>
+                        <span id="triangle-angle-c" class="font-bold text-blue-600">--</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-lg font-semibold mb-3">Weight Converter</h3>
+              <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Value</label>
+                    <input type="number" id="weight-value" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Enter weight value">
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">From</label>
+                      <select id="weight-from" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="mg">Milligrams (mg)</option>
+                        <option value="g" selected>Grams (g)</option>
+                        <option value="kg">Kilograms (kg)</option>
+                        <option value="oz">Ounces (oz)</option>
+                        <option value="lb">Pounds (lb)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 mb-1">To</label>
+                      <select id="weight-to" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="mg">Milligrams (mg)</option>
+                        <option value="g">Grams (g)</option>
+                        <option value="kg" selected>Kilograms (kg)</option>
+                        <option value="oz">Ounces (oz)</option>
+                        <option value="lb">Pounds (lb)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" id="convert-weight-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+                      Convert
+                    </button>
+                  </div>
+                  <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                    <div class="flex justify-between">
+                      <span class="font-medium">Result:</span>
+                      <span id="weight-result" class="font-bold text-blue-600">--</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Textile Calculation</h3>
+          <p class="text-gray-400">Professional textile industry calculators and tools for accurate measurements and conversions.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="calculator.html" class="text-gray-400 hover:text-white">Calculators</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+            <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              info@textilecalculation.com
+            </li>
+            <li class="flex items-center text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +91 8727938013
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Disclaimer</h4>
+          <p class="text-gray-400 text-sm">While we strive for accuracy in all calculations, users are advised to cross-check results for critical applications.</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Textile Calculation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

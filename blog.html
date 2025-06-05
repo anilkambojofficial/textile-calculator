@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Textile Calculation</title>
+  <meta name="description" content="Learn about textile industry topics including yarn count systems, GSM calculation, and fabric cover factor analysis.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Textile Calculation</a>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+          <li><a href="calculator.html" class="hover:text-blue-600">Calculators</a></li>
+          <li><a href="blog.html" class="text-blue-600 font-medium">Blog</a></li>
+          <li><a href="about.html" class="hover:text-blue-600">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-3xl font-bold mb-8 text-center">Textile Knowledge Blog</h1>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Blog Article 1 -->
+          <div id="yarn-count-systems" class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-2">Understanding Yarn Count Systems: A Comprehensive Guide</h2>
+            <p class="text-gray-500 text-sm mb-4">Published: May 1, 2025</p>
+            <div class="space-y-4">
+              <p>
+                Yarn count is a numerical expression that defines the fineness or coarseness of a yarn. 
+                It's a critical parameter in textile manufacturing as it affects fabric weight, 
+                appearance, handle, and end-use performance. Different systems are used across the 
+                textile industry to express yarn count.
+              </p>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Direct vs. Indirect Counting Systems</h3>
+              <p>
+                There are two primary categories of yarn count systems:
+              </p>
+              <ul class="list-disc list-inside space-y-1 pl-4 text-gray-700">
+                <li><strong>Direct Count Systems:</strong> Weight per unit length (heavier yarn = higher count)</li>
+                <li><strong>Indirect Count Systems:</strong> Length per unit weight (finer yarn = higher count)</li>
+              </ul>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Major Yarn Count Systems</h3>
+              
+              <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border px-4 py-2 text-left">System</th>
+                      <th class="border px-4 py-2 text-left">Abbreviation</th>
+                      <th class="border px-4 py-2 text-left">Definition</th>
+                      <th class="border px-4 py-2 text-left">Type</th>
+                      <th class="border px-4 py-2 text-left">Common Use</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border px-4 py-2">English Cotton</td>
+                      <td class="border px-4 py-2">Ne</td>
+                      <td class="border px-4 py-2">Number of 840-yard hanks per pound</td>
+                      <td class="border px-4 py-2">Indirect</td>
+                      <td class="border px-4 py-2">Cotton, spun polyester</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border px-4 py-2">Metric</td>
+                      <td class="border px-4 py-2">Nm</td>
+                      <td class="border px-4 py-2">Number of 1000-meter hanks per kilogram</td>
+                      <td class="border px-4 py-2">Indirect</td>
+                      <td class="border px-4 py-2">Wool, European textiles</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">Tex</td>
+                      <td class="border px-4 py-2">Tex</td>
+                      <td class="border px-4 py-2">Weight in grams of 1000 meters</td>
+                      <td class="border px-4 py-2">Direct</td>
+                      <td class="border px-4 py-2">Technical textiles, ISO standard</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border px-4 py-2">Denier</td>
+                      <td class="border px-4 py-2">Den</td>
+                      <td class="border px-4 py-2">Weight in grams of 9000 meters</td>
+                      <td class="border px-4 py-2">Direct</td>
+                      <td class="border px-4 py-2">Silk, synthetic filaments</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">Linen/Lea</td>
+                      <td class="border px-4 py-2">Lea</td>
+                      <td class="border px-4 py-2">Number of 300-yard hanks per pound</td>
+                      <td class="border px-4 py-2">Indirect</td>
+                      <td class="border px-4 py-2">Linen, flax fibers</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Conversion Formulas</h3>
+              <p>To convert between different systems, these formulas can be used:</p>
+              
+              <div class="bg-gray-100 p-4 rounded-md font-mono text-sm">
+                <p>Ne = 590.5 / Tex</p>
+                <p>Nm = 1000 / Tex</p>
+                <p>Tex = 590.5 / Ne</p>
+                <p>Tex = 1000 / Nm</p>
+                <p>Denier = Tex × 9</p>
+                <p>Linen (Lea) = Ne × 2.8</p>
+              </div>
+              
+              <p class="mt-4">
+                Understanding yarn count systems and being able to convert between them is essential 
+                for textile professionals, especially when working with international suppliers and customers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Blog Article 2 -->
+          <div id="gsm-calculation" class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-2">The Science of GSM Calculation in Fabric Production</h2>
+            <p class="text-gray-500 text-sm mb-4">Published: April 15, 2025</p>
+            <div class="space-y-4">
+              <p>
+                GSM (Grams per Square Meter) is a standard measurement used worldwide to indicate the weight 
+                and density of a fabric. It's a crucial parameter for fabric specification, quality control, 
+                and end-use determination.
+              </p>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">GSM Calculation Methodology</h3>
+              <p>
+                The accurate calculation of GSM involves several textile parameters:
+              </p>
+              
+              <div class="bg-gray-100 p-4 rounded-md font-mono text-sm">
+                GSM = (Ends per meter / count in Nm + Warp Shrinkage) + (Picks per meter / count in Nm + Weft Shrinkage)
+              </div>
+              
+              <p class="mt-4">Where:</p>
+              <ul class="list-disc list-inside space-y-1 pl-4 text-gray-700">
+                <li><strong>Ends per meter:</strong> Number of warp yarns per meter (EPI × 39.37)</li>
+                <li><strong>Picks per meter:</strong> Number of weft yarns per meter (PPI × 39.37)</li>
+                <li><strong>Count in Nm:</strong> Yarn count in Metric system</li>
+                <li><strong>Warp/Weft Shrinkage:</strong> Shrinkage percentage in decimal form</li>
+              </ul>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">GSM Ranges for Common Fabrics</h3>
+              
+              <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border px-4 py-2 text-left">Fabric Category</th>
+                      <th class="border px-4 py-2 text-left">GSM Range</th>
+                      <th class="border px-4 py-2 text-left">Applications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border px-4 py-2">Lightweight</td>
+                      <td class="border px-4 py-2">30-150</td>
+                      <td class="border px-4 py-2">Sheer curtains, lingerie, summer blouses</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border px-4 py-2">Medium weight</td>
+                      <td class="border px-4 py-2">150-300</td>
+                      <td class="border px-4 py-2">Shirts, dresses, bedsheets, light denim</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">Heavy weight</td>
+                      <td class="border px-4 py-2">300-450</td>
+                      <td class="border px-4 py-2">Denim jeans, upholstery, winter coats</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border px-4 py-2">Very heavy</td>
+                      <td class="border px-4 py-2">450+</td>
+                      <td class="border px-4 py-2">Industrial fabrics, heavy denim, canvas</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="mt-4">
+                Understanding GSM calculation allows textile professionals to predict fabric weight during 
+                the design phase, ensuring specifications are met before production begins. This saves time, 
+                reduces material waste, and improves quality control.
+              </p>
+            </div>
+          </div>
+
+          <!-- Blog Article 3 -->
+          <div id="fabric-cover-factor" class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-2">Cover Factor: The Key to Fabric Structure Analysis</h2>
+            <p class="text-gray-500 text-sm mb-4">Published: March 28, 2025</p>
+            <div class="space-y-4">
+              <p>
+                Cover factor is a dimensionless value that indicates how well the yarns in a woven fabric 
+                cover the area of the fabric. It's an important parameter that affects fabric appearance, 
+                porosity, air permeability, and overall performance.
+              </p>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Cover Factor Calculation</h3>
+              <p>
+                The cover factor is calculated separately for warp and weft directions:
+              </p>
+              
+              <div class="bg-gray-100 p-4 rounded-md font-mono text-sm">
+                Warp Cover Factor = EPI / √(Warp Count in Ne)<br />
+                Weft Cover Factor = PPI / √(Weft Count in Ne)<br />
+                Total Cover Factor = (Warp CF + Weft CF) × Weave Factor
+              </div>
+              
+              <p class="mt-4">Where:</p>
+              <ul class="list-disc list-inside space-y-1 pl-4 text-gray-700">
+                <li><strong>EPI:</strong> Ends (warp yarns) Per Inch</li>
+                <li><strong>PPI:</strong> Picks (weft yarns) Per Inch</li>
+                <li><strong>Ne:</strong> Yarn count in English Cotton system</li>
+                <li><strong>Weave Factor:</strong> Adjustment based on weave type</li>
+              </ul>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Weave Factors for Common Structures</h3>
+              
+              <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border px-4 py-2 text-left">Weave Type</th>
+                      <th class="border px-4 py-2 text-left">Weave Factor</th>
+                      <th class="border px-4 py-2 text-left">Characteristics</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border px-4 py-2">Plain</td>
+                      <td class="border px-4 py-2">1.0</td>
+                      <td class="border px-4 py-2">Maximum interlacement, firm structure</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border px-4 py-2">Twill</td>
+                      <td class="border px-4 py-2">0.9</td>
+                      <td class="border px-4 py-2">Diagonal pattern, more flexibility</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">Satin</td>
+                      <td class="border px-4 py-2">0.75</td>
+                      <td class="border px-4 py-2">Smooth surface, longer floats</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="text-xl font-medium mt-6 mb-2">Practical Applications</h3>
+              <p>
+                Understanding cover factor helps in:
+              </p>
+              <ul class="list-disc list-inside space-y-1 pl-4 text-gray-700">
+                <li>Predicting fabric porosity and air permeability</li>
+                <li>Determining fabric density and opacity</li>
+                <li>Controlling fabric hand and appearance</li>
+                <li>Optimizing fabric construction for specific end uses</li>
+              </ul>
+
+              <p class="mt-4">
+                A higher cover factor indicates a tighter, more closely woven fabric with less air 
+                permeability, while a lower cover factor indicates a more open, porous structure.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar/Related Content -->
+        <div class="space-y-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Popular Articles</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#yarn-count-systems" class="text-blue-600 hover:underline flex items-center">
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full mr-2">Yarn</span>
+                  Understanding Yarn Count Systems
+                </a>
+              </li>
+              <li>
+                <a href="#gsm-calculation" class="text-blue-600 hover:underline flex items-center">
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full mr-2">Fabric</span>
+                  The Science of GSM Calculation
+                </a>
+              </li>
+              <li>
+                <a href="#fabric-cover-factor" class="text-blue-600 hover:underline flex items-center">
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full mr-2">Structure</span>
+                  Cover Factor Explained
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Textile Resources</h3>
+            <div class="space-y-4">
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-medium mb-2">Yarn Count Conversion Tool</h4>
+                <p class="text-sm text-gray-600 mb-2">
+                  Convert between Ne, Nm, Tex, and more.
+                </p>
+                <a href="calculator.html#yarncount" class="text-blue-600 text-sm hover:underline">
+                  Try the converter →
+                </a>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-medium mb-2">GSM Calculator</h4>
+                <p class="text-sm text-gray-600 mb-2">
+                  Calculate fabric weight accurately.
+                </p>
+                <a href="calculator.html#gsm" class="text-blue-600 text-sm hover:underline">
+                  Use the calculator →
+                </a>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-medium mb-2">Cover Factor Tool</h4>
+                <p class="text-sm text-gray-600 mb-2">
+                  Analyze fabric structure and coverage.
+                </p>
+                <a href="calculator.html#coverfactor" class="text-blue-600 text-sm hover:underline">
+                  Check the tool →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Textile Calculation</h3>
+          <p class="text-gray-400">Professional textile industry calculators and tools for accurate measurements and conversions.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="calculator.html" class="text-gray-400 hover:text-white">Calculators</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+            <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              info@textilecalculation.com
+            </li>
+            <li class="flex items-center text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +91 8727938013
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Disclaimer</h4>
+          <p class="text-gray-400 text-sm">While we strive for accuracy in all calculations, users are advised to cross-check results for critical applications.</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Textile Calculation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
